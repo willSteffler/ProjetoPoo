@@ -1,0 +1,45 @@
+package projetoneander;
+
+public class MeioSomador{
+	
+	private boolean b;
+	private boolean a;
+	
+	public MeioSomador(boolean a, boolean b){
+		
+		this.a = a;
+		this.b = b;
+	}
+	
+	public boolean soma(){
+		
+		OperacaoXor xor = new OperacaoXor(a, b);
+		
+		return xor.getXor();
+	}
+	
+	public boolean carry(){
+		
+		OperacaoAnd and  = new OperacaoAnd(a, b);
+		
+		return and.getAnd();
+	}
+	
+	public void setMeioSomador(boolean a, boolean b){
+		
+		this.a = a;
+		this.b = b;
+	}
+	
+	public static void main(String[] args){
+		
+		MeioSomador ms = new MeioSomador(false, false);
+		System.out.println("soma= " + ms.soma() + "carry= " + ms.carry());
+		
+		ms.setMeioSomador(false, true);
+		System.out.println("soma= " + ms.soma() + "carry= " + ms.carry());
+		
+		ms.setMeioSomador(true, true);
+		System.out.println("soma= " + ms.soma() + "carry= " + ms.carry());
+	}
+}
