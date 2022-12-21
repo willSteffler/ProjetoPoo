@@ -10,9 +10,14 @@ public class SomadorCompleto{
 	//construtores
 	public SomadorCompleto(){
 		
-		this(false, false);
+		this(false, false, false);
 	}
 	
+        public SomadorCompleto(boolean a){
+        
+            this(a, false, false);
+        }
+        
 	public SomadorCompleto(boolean a, boolean b){
 		
 		this(a, b, false);
@@ -47,9 +52,18 @@ public class SomadorCompleto{
 		this.a = a;
 		this.b = b;
 		
-		ms[0] = new MeioSomador(a, b);
-		ms[1] = new MeioSomador(ms[0].soma(), c);
+		ms[0].setMeioSomador(a, b);
+		ms[1].setMeioSomador(ms[0].soma(), c);
 	}
+        
+        public void setSomadorCompleto(boolean a, boolean b, boolean c){
+        
+            this.a = a;
+            this.b = b;
+            
+            ms[0].setMeioSomador(a, b);
+            ms[1].setMeioSomador(ms[0].soma(), c);
+        }
 	
 	public void setCarryIn(boolean c){
 		
@@ -68,6 +82,9 @@ public class SomadorCompleto{
 		System.out.println("Soma= " + sc.soma() + " Carry= " + sc.carry());
 		
 		sc.setSomadorCompleto(true, true);	//soma 1 + 1
+		System.out.println("Soma= " + sc.soma() + " Carry= " + sc.carry());
+                
+                sc.setSomadorCompleto(true, true, true);	//soma 1 + 1
 		System.out.println("Soma= " + sc.soma() + " Carry= " + sc.carry());
 	}
 }
