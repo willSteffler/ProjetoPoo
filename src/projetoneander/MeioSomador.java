@@ -20,7 +20,7 @@ public class MeioSomador{
 	
 	public boolean carry(){
 		
-		OperacaoAnd and  = new OperacaoAnd(a, b);
+		PortaAnd and  = new PortaAnd(a, b);
 		
 		return and.getAnd();
 	}

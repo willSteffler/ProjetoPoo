@@ -42,7 +42,7 @@ public class SomadorCompleto{
 	
 	public boolean carry(){
 		
-		OperacaoOr or = new OperacaoOr(ms[0].carry(), ms[1].carry());
+		PortaOr or = new PortaOr(ms[0].carry(), ms[1].carry());
 		
 		return or.getOr();
 	}

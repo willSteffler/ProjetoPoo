@@ -24,12 +24,12 @@ import java.util.Scanner;
 
 public class OrOitoBits {
 
-    private OperacaoOr or[];
+    private PortaOr or[];
 
     //construtor
     public OrOitoBits(int num, int num2) throws Intervalo_Exception {
 
-        this.or = new OperacaoOr[8];
+        this.or = new PortaOr[8];
         String bin = Integer.toBinaryString(num);
         String bin2 = Integer.toBinaryString(num2);
 
@@ -50,8 +50,8 @@ public class OrOitoBits {
         for (int contador = 0; contador < or.length; contador++) {
             if (bin.charAt(contador) == '1'|| bin2.charAt(contador) == '1')
                 
-                or[contador] = new OperacaoOr(true);
-            else or[contador] = new OperacaoOr();
+                or[contador] = new PortaOr(true);
+            else or[contador] = new PortaOr();
         }
     }
 

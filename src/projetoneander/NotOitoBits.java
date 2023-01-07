@@ -25,12 +25,12 @@ import java.util.Scanner;
 
 public class NotOitoBits {
     
-    private OperacaoNot[] not;
+    private PortaNot[] not;
     
     //construtor
     public NotOitoBits(int num) throws Intervalo_Exception{
         
-        this.not = new OperacaoNot[8];
+        this.not = new PortaNot[8];
         String bin = Integer.toBinaryString(num);
         
         int tam = not.length - bin.length();
@@ -43,9 +43,9 @@ public class NotOitoBits {
         
         for(int contador = 0; contador < not.length; contador++){
             if(bin.charAt(contador) == '0')
-                not[contador] = new OperacaoNot();
+                not[contador] = new PortaNot();
             
-            else not[contador] = new OperacaoNot(true);
+            else not[contador] = new PortaNot(true);
         }
     }
 	

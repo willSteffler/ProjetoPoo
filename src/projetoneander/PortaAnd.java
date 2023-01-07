@@ -12,21 +12,21 @@ Operacao And:
 */
 package projetoneander;
 
-public class OperacaoAnd{
+public class PortaAnd{
 	
 	private boolean a;
 	private boolean b;
         
         //construtores
-        public OperacaoAnd(){
+        public PortaAnd(){
         
             this(false, false);
         }
-	public OperacaoAnd(boolean a){
+	public PortaAnd(boolean a){
         
             this(a, true);
         }
-	public OperacaoAnd(boolean a, boolean b){
+	public PortaAnd(boolean a, boolean b){
 		
 		this.a = a;
 		this.b = b;
@@ -46,7 +46,7 @@ public class OperacaoAnd{
 
 	public static void main(String[] args){
 		
-		OperacaoAnd and = new OperacaoAnd(false, false);
+		PortaAnd and = new PortaAnd(false, false);
 		System.out.println(and.getAnd());
 		
 		and.setAnd(false, true);

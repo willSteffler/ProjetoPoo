@@ -12,23 +12,23 @@ Operacao Or:
 
 package projetoneander;
 
-public class OperacaoOr{
+public class PortaOr{
 	
 	private boolean a;
 	private boolean b;
         
         //construtores
-        public OperacaoOr(){
+        public PortaOr(){
         
             this(false, false);
         }
         
-        public OperacaoOr(boolean a){
+        public PortaOr(boolean a){
         
             this(a, false);
         }
 	
-	public OperacaoOr(boolean a, boolean b){
+	public PortaOr(boolean a, boolean b){
 		
 		this.a = a;
 		this.b = b;
@@ -48,7 +48,7 @@ public class OperacaoOr{
 	
 	public static void main(String[] args){
 		
-		OperacaoOr or = new OperacaoOr(false, false);
+		PortaOr or = new PortaOr(false, false);
 		System.out.println(or.getOr());
 		
 		or.setOr(false, true);

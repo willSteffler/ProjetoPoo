@@ -13,14 +13,14 @@ public class OperacaoXor{
 	
 	public boolean getXor(){
 		
-		OperacaoNot not = new OperacaoNot(a);
-		OperacaoAnd and = new OperacaoAnd(not.getNot(), b);
+		PortaNot not = new PortaNot(a);
+		PortaAnd and = new PortaAnd(not.getNot(), b);
 		
 		boolean t = and.getAnd();
 		not.setNot(b);
 		and.setAnd(not.getNot(), a);
 		
-		OperacaoOr or = new OperacaoOr(t, and.getAnd());
+		PortaOr or = new PortaOr(t, and.getAnd());
 		
 		return or.getOr();
 	}

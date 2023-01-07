@@ -12,17 +12,17 @@ Operacao Not:
 
 package projetoneander;
 
-public class OperacaoNot{
+public class PortaNot{
 	
 	private boolean a;
 	
         //construtores
-        public OperacaoNot(){
+        public PortaNot(){
         
             this.a = false;
         }
         
-	public OperacaoNot(boolean a){
+	public PortaNot(boolean a){
 		
 		this.a = a;
 	}
@@ -40,7 +40,7 @@ public class OperacaoNot{
 	
 	public static void main(String[] args){
 		
-		OperacaoNot not = new OperacaoNot(true);
+		PortaNot not = new PortaNot(true);
 		System.out.println(not.getNot());
 		
 		not.setNot(false);

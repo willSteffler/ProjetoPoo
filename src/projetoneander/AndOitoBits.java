@@ -26,12 +26,12 @@ import java.util.Scanner;
 
 public class AndOitoBits {
    
-    private OperacaoAnd and[];
+    private PortaAnd and[];
     
     //construtor
     public AndOitoBits(int num, int num2) throws Intervalo_Exception{
     
-        this.and = new OperacaoAnd[8];
+        this.and = new PortaAnd[8];
         String bin = Integer.toBinaryString(num);
         String bin2 = Integer.toBinaryString(num2);
         
@@ -52,8 +52,8 @@ public class AndOitoBits {
         for(int contador = 0; contador < and.length; contador++){
             if(bin.charAt(contador) == '0' || bin2.charAt(contador) == '0')
                 
-                and[contador] = new OperacaoAnd();
-            else and[contador] = new OperacaoAnd(true);
+                and[contador] = new PortaAnd();
+            else and[contador] = new PortaAnd(true);
         }
     }
     
