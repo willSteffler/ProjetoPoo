@@ -1,9 +1,13 @@
 /*
     https://www.youtube.com/watch?v=FErXuyNpdQQ
  */
-package projetoneander;
+package FlipFlop;
 
-public class FlipFlop {
+import projetoneander.PortaAnd;
+import projetoneander.PortaNand;
+import projetoneander.PortaNot;
+
+public class FlipFlopRS {
     
     private PortaNand nand[] = new PortaNand[2];
     private PortaAnd and[] = new PortaAnd[2];
@@ -12,7 +16,7 @@ public class FlipFlop {
     private boolean saida;
     private boolean saida_negada = !saida;
 
-    public FlipFlop(boolean r, boolean s) {
+    public FlipFlopRS(boolean r, boolean s) {
         
         /*
             r   s  !r  !s   q  !q
@@ -69,7 +73,7 @@ public class FlipFlop {
     
     public static void main(String[] args){
     
-        FlipFlop ff = new FlipFlop(true, false);
+        FlipFlopRS ff = new FlipFlopRS(true, false);
         System.out.println("Psaida: " + ff.isSaida() + " Pneg: " +
                 ff.isSaida_negada());   //Psaida: false Pneg: true
         

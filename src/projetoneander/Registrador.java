@@ -4,14 +4,15 @@
  */
 package projetoneander;
 
+import FlipFlop.FlipFlopRS;
 import java.util.Scanner;
 
 public class Registrador {
     
-    private FlipFlop ff[];
+    private FlipFlopRS ff[];
     
     public Registrador(int valor) throws Intervalo_Exception{
-        this.ff = new FlipFlop[8];
+        this.ff = new FlipFlopRS[8];
         String bin = Integer.toBinaryString(valor);
         
         while(bin.length() < ff.length){
@@ -20,14 +21,14 @@ public class Registrador {
         
         for(int c = 0; c < bin.length(); c++){
             if(bin.charAt(c) == '0')
-                ff[c] = new FlipFlop(false, false);
-            else ff[c] = new FlipFlop(false, true);
+                ff[c] = new FlipFlopRS(false, false);
+            else ff[c] = new FlipFlopRS(false, true);
         }
     }
     
     public Registrador(String ponteiro){
     
-        ff = new FlipFlop[8];
+        ff = new FlipFlopRS[8];
         
         if(ponteiro.length() < ff.length){
             for(int c = 0; c < ff.length - ponteiro.length(); c++)
@@ -36,14 +37,14 @@ public class Registrador {
         
         for(int contador = 0; contador < ff.length; contador++){
             if(ponteiro.charAt(contador) == '0')
-                ff[contador] = new FlipFlop(true, false);
-            else ff[contador] = new FlipFlop(false, true);
+                ff[contador] = new FlipFlopRS(true, false);
+            else ff[contador] = new FlipFlopRS(false, true);
         }
     }
     
     public void setRegistrador(String ponteiro){
     
-        ff = new FlipFlop[8];
+        ff = new FlipFlopRS[8];
         
         if(ponteiro.length() < ff.length){
             for(int c = 0; c < ff.length - ponteiro.length(); c++)
@@ -52,8 +53,8 @@ public class Registrador {
         
         for(int contador = 0; contador < ff.length; contador++){
             if(ponteiro.charAt(contador) == '0')
-                ff[contador] = new FlipFlop(true, false);
-            else ff[contador] = new FlipFlop(false, true);
+                ff[contador] = new FlipFlopRS(true, false);
+            else ff[contador] = new FlipFlopRS(false, true);
         }
     }
     
