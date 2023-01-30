@@ -10,7 +10,7 @@ Operacao And:
     Possui um metodo getAnd que retorna 'a & b'.
     Possui um metodo setAnd que redefine os valores dos atributos.
 */
-package projetoneander;
+package PortasLogicas;
 
 public class PortaAnd{
 	

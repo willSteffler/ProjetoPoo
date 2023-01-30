@@ -15,13 +15,11 @@ package FlipFlop;
  *
  * @author William
  */
-public class FlipFlopJK {
+public class FlipFlopJK extends FlipFlop{
     
     private boolean J;
     private boolean K;
     private boolean CLK;
-    private boolean saidaQ;
-    private boolean saidaQn;
 
     public FlipFlopJK(boolean J, boolean K, boolean CLK) {
         this.J = J;
@@ -29,18 +27,23 @@ public class FlipFlopJK {
         this.CLK = CLK;
     }
     
+    @Override
+    public boolean estadoFlipFlop(){        
+        return this.saidaQ;
+    }
+    
     public boolean estadoFlipFlop(boolean J, boolean K, boolean CLK){        
         if(CLK == true){
             if(J == false && K == true){
                 this.saidaQ = false;
-                this.saidaQn = true;
+                this.saidaQN = true;
             }else if(J == true && K == false){
                 this.saidaQ = true;
-                this.saidaQn = false;
+                this.saidaQN = false;
             }else if(J == true && K == true){
                 boolean temp = saidaQ;
-                this.saidaQ = saidaQn;
-                this.saidaQn = temp;
+                this.saidaQ = saidaQN;
+                this.saidaQN = temp;
             }
         }
         
@@ -49,24 +52,6 @@ public class FlipFlopJK {
         this.CLK = CLK;
         
         return saidaQ;
-    }
-    
-    public boolean estadoFlipFlop(){
-        if(CLK == true){
-            if(J == false && K == true){
-                this.saidaQ = false;
-                this.saidaQn = true;
-            }else if(J == true && K == false){
-                this.saidaQ = true;
-                this.saidaQn = false;
-            }else if(J == true && K == false){
-                boolean temp = saidaQ;
-                saidaQ = saidaQn;
-                saidaQn = temp;
-            }
-        }
-        
-        return this.saidaQ;
     }
     
     public static void main(String[] args){

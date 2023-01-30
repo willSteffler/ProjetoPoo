@@ -1,11 +1,15 @@
-package projetoneander;
+package PortasLogicas;
 
-public class OperacaoXor{
+import PortasLogicas.PortaOr;
+import PortasLogicas.PortaNot;
+import PortasLogicas.PortaAnd;
+
+public class PortaXor{
 	
 	private boolean a;
 	private boolean b;
 	
-	public OperacaoXor(boolean a, boolean b){
+	public PortaXor(boolean a, boolean b){
 		
 		this.a = a;
 		this.b = b;
@@ -33,7 +37,7 @@ public class OperacaoXor{
 	
 	public static void main(String[] args){
 		
-		OperacaoXor xor = new OperacaoXor(false, false);
+		PortaXor xor = new PortaXor(false, false);
 		System.out.println(xor.getXor());
 		
 		xor.setXor(false, true);

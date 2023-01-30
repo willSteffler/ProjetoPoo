@@ -1,6 +1,10 @@
 
 package projetoneander;
 
+import PortasLogicas.PortaOr;
+import PortasLogicas.PortaNot;
+import PortasLogicas.PortaAnd;
+
 public class Multiplex {
     
     private PortaAnd and[];

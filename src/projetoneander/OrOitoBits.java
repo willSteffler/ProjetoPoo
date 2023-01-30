@@ -20,6 +20,7 @@ Or Oito Bits:
  */
 package projetoneander;
 
+import PortasLogicas.PortaOr;
 import java.util.Scanner;
 
 public class OrOitoBits {

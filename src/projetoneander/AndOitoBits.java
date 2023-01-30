@@ -22,6 +22,7 @@ And Oito Bits:
 
 package projetoneander;
 
+import PortasLogicas.PortaAnd;
 import java.util.Scanner;
 
 public class AndOitoBits {

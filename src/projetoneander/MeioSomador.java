@@ -1,5 +1,8 @@
 package projetoneander;
 
+import PortasLogicas.PortaXor;
+import PortasLogicas.PortaAnd;
+
 public class MeioSomador{
 	
 	private boolean b;
@@ -13,7 +16,7 @@ public class MeioSomador{
 	
 	public boolean soma(){
 		
-		OperacaoXor xor = new OperacaoXor(a, b);
+		PortaXor xor = new PortaXor(a, b);
 		
 		return xor.getXor();
 	}

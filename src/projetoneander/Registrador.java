@@ -62,7 +62,7 @@ public class Registrador {
     
         System.out.println("bin:");
         for(int c = 0; c < ff.length; c++){
-            System.out.println("posicao " + c + ": " + ff[c].isSaida());
+            System.out.println("posicao " + c + ": " + ff[c].isSaidaQ());
         }
             
     }

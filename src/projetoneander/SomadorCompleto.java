@@ -1,5 +1,7 @@
 package projetoneander;
 
+import PortasLogicas.PortaOr;
+
 public class SomadorCompleto{
 	
 	private boolean a;

@@ -1,5 +1,8 @@
 
-package projetoneander;
+package PortasLogicas;
+
+import PortasLogicas.PortaNot;
+import PortasLogicas.PortaAnd;
 
 public class PortaNand {
     

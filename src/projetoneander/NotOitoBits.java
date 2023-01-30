@@ -21,6 +21,7 @@
 
 package projetoneander;
 
+import PortasLogicas.PortaNot;
 import java.util.Scanner;
 
 public class NotOitoBits {

@@ -10,7 +10,7 @@ Operacao Not:
     Possui um metodo setNot para o atributo 'a'
 */
 
-package projetoneander;
+package PortasLogicas;
 
 public class PortaNot{
 	

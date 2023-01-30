@@ -10,7 +10,7 @@ Operacao Or:
     Possui um metodo setOr com dois argumentos.
 */
 
-package projetoneander;
+package PortasLogicas;
 
 public class PortaOr{
 	

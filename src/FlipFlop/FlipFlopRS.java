@@ -3,20 +3,10 @@
  */
 package FlipFlop;
 
-import projetoneander.PortaAnd;
-import projetoneander.PortaNand;
-import projetoneander.PortaNot;
-
-public class FlipFlopRS {
+public class FlipFlopRS extends FlipFlop{
     
-    private PortaNand nand[] = new PortaNand[2];
-    private PortaAnd and[] = new PortaAnd[2];
-    private PortaNot not[] = new PortaNot[2];
-    
-    private boolean saida;
-    private boolean saida_negada = !saida;
-
-    public FlipFlopRS(boolean r, boolean s) {
+    private boolean R;
+    private boolean S;
         
         /*
             r   s  !r  !s   q  !q
@@ -40,61 +30,59 @@ public class FlipFlopRS {
         //q == s
         //!q == !(!r|s)
         
-        not[0] = new PortaNot(r);
-        
-        nand[0] = new PortaNand(not[0].getNot(), s);
-        saida_negada = nand[0].getNand();
-        
-        saida = s;
-    }
-
-    public void alteraEstado(boolean r, boolean s){
     
-        not[0].setNot(r);
-        not[1] = new PortaNot(s);
+    public FlipFlopRS(boolean R, boolean S){
         
-        nand[1] = new PortaNand(not[1].getNot(), saida_negada);
-
-        saida = nand[1].getNand();
+        this.R = R;
+        this.S = S;
         
-        nand[0].setNand(not[0].getNot(), saida);
-
-        saida_negada = nand[0].getNand();
+        if(R == false && S == true){
+            saidaQ = true;
+            saidaQN = false;
+        }else if(R == true && S == false){
+            saidaQ = false;
+            saidaQN = true;
+        }else if(R == true && S == true){
+            saidaQ = true;
+            saidaQN = true;
+        }
     }
     
-    public boolean isSaida() {
-        return saida;
+    @Override
+    public boolean estadoFlipFlop(){     
+        return saidaQ;
     }
-
-    public boolean isSaida_negada() {
-        return saida_negada;
+    
+    public boolean estadoFlipFlop(boolean R, boolean S){
+        if(R == false && S == true){
+            saidaQ = true;
+            saidaQN = false;
+        }else if(R == true && S == false){
+            saidaQ = false;
+            saidaQN = true;
+        }else if(R == true && S == true){
+            saidaQ = true;
+            saidaQN = true;
+        }
+        
+        return saidaQ;
     }
     
     
     public static void main(String[] args){
     
-        FlipFlopRS ff = new FlipFlopRS(true, false);
-        System.out.println("Psaida: " + ff.isSaida() + " Pneg: " +
-                ff.isSaida_negada());   //Psaida: false Pneg: true
+        FlipFlopRS RS = new FlipFlopRS(true, false);
+        System.out.println("Saida Q: " + RS.isSaidaQ() + " saida QN: " +
+                RS.isSaidaQN());   //Psaida: false Pneg: true
         
-        ff.alteraEstado(false, false);
-        System.out.println("saida: " + ff.isSaida() + " neg: " + 
-                ff.isSaida_negada());   //saida: false neg: true
+        System.out.println("Saida Q: " + RS.estadoFlipFlop(false, false) + 
+                " saida QN: " + RS.isSaidaQN());
         
-        ff.alteraEstado(true, true);
-        System.out.println("saida: " + ff.isSaida() + " neg: " + 
-                ff.isSaida_negada());   //saida: true neg: true
+        System.out.println("Saida Q:" + RS.estadoFlipFlop(true, true) + 
+                " Saida QN: " + RS.isSaidaQN());
         
-        ff.alteraEstado(false, false);
-        System.out.println("saida: " + ff.isSaida() + " neg: " + 
-                ff.isSaida_negada());   //saida: true neg: true
-        
-        ff.alteraEstado(false, true);
-        System.out.println("saida: " + ff.isSaida() + " neg: " +
-                ff.isSaida_negada());   //saida: true neg: false
-        
-        ff.alteraEstado(false, false);
-        System.out.println("saida: " + ff.isSaida() + " neg: " + 
-                ff.isSaida_negada());   //saida: true neg: false
+        System.out.println("Saida Q:" + RS.estadoFlipFlop(false, true) + 
+                " Saida QN: " + RS.isSaidaQN());
+
     }
 }
